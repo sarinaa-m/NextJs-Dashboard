@@ -1,0 +1,22 @@
+import { TextareaProps } from "@/types";
+
+const Textarea: React.FC<TextareaProps> = ({ label, error, ...props }) => {
+    return (
+        <div className="mb-4">
+            {label && (
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    {label}
+                </label>
+            )}
+            <textarea
+                className={`w-full px-4 py-2 rounded-lg border ${error ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                    } bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none`}
+                rows={4}
+                {...props}
+            />
+            {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+        </div>
+    );
+};
+
+export default Textarea
