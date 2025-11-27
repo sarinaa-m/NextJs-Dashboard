@@ -12,15 +12,12 @@ const APIDataDashboard: React.FC = () => {
   const { data: users, isLoading, error, refetch: fetchData } = UseUsers();
 
   return (
-    <Card>
+    <Card className='overflow-y-scroll h-[80vh] '>
       <div className='flex mb-6 justify-between'>
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
           <User size={24} />
           API Dashboard
         </h2>
-        <Button loading={isLoading} onClick={() => fetchData()} variant="secondary" className=" justify-center">
-          Refresh Data
-        </Button>
       </div>
 
       {isLoading ? (

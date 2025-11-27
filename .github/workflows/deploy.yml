@@ -3,8 +3,8 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - main   # هر بار که روی main push یا merge انجام بشه اجرا می‌شه
-
+      - main   
+      
 jobs:
   deploy:
     runs-on: ubuntu-latest
