@@ -9,7 +9,7 @@ export interface ButtonProps {
     variant?: 'primary' | 'secondary' | 'outline';
     disabled?: boolean;
     className?: string;
-    loading: boolean
+    loading?: boolean
 }
 
 export interface CardProps {

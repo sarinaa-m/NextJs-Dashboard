@@ -1,32 +1,16 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
-import Button from './ui/Button';
-import { Theme } from '@/types';
+import { useTheme } from 'next-themes'
 
-const ThemeToggle: React.FC = () => {
-  const [theme, setTheme] = useState<Theme>('light');
-
-  useEffect(() => {
-    const savedTheme = (localStorage.getItem('theme') as Theme) || 'light';
-    setTheme(savedTheme);
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme: Theme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
-  };
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
 
   return (
-    <Button onClick={toggleTheme} variant="outline">
-      {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-      {theme === 'light' ? 'Dark' : 'Light'}
-    </Button>
-  );
-};
-
-export default ThemeToggle;
+    <button
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+    >
+      {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+    </button>
+  )
+}

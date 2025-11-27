@@ -21,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+
       <body className="antialiased">
         <Providers>{children}</Providers>
       </body>
