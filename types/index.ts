@@ -4,7 +4,7 @@ export type Theme = 'light' | 'dark';
 
 export interface ButtonProps {
     children: React.ReactNode;
-    onClick?: () => unknown;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
     type?: 'button' | 'submit' | 'reset';
     variant?: 'primary' | 'secondary' | 'outline';
     disabled?: boolean;

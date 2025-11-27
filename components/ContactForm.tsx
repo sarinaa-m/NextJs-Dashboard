@@ -111,7 +111,7 @@ const ContactForm: React.FC = () => {
                         placeholder="Enter your message..."
                     />
 
-                    <Button onClick={handleSubmit} className="w-full justify-center">
+                    <Button loading={false} onClick={handleSubmit} className="w-full justify-center">
                         <MessageSquare size={20} />
                         Send Message
                     </Button>
