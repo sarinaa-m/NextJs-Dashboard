@@ -31,7 +31,7 @@ const APIDataDashboard: React.FC = () => {
         <div className="text-center text-red-600 dark:text-red-400 py-8">
           <p className="font-medium">Error loading data</p>
           <p className="text-sm mt-2">{error.message}</p>
-          <Button onClick={fetchData} variant="secondary" className="mt-4">
+          <Button loading={isLoading} onClick={fetchData} variant="secondary" className="mt-4">
             Try Again
           </Button>
         </div>
