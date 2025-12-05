@@ -2,10 +2,11 @@
 
 import React from 'react';
 import { User, Loader2 } from 'lucide-react';
-import Button from '../ui/Button';
+
 import Card from '../ui/Card';
 import { UseUsers } from '@/api/github/querries';
 import { DashboardList } from './components/DashboardList';
+import Button from '../ui/Button';
 
 
 const APIDataDashboard: React.FC = () => {

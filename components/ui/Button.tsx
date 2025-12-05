@@ -1,6 +1,7 @@
 import { ButtonProps } from "@/types";
 import { Spinner } from "./Spinner";
 
+
 const Button: React.FC<ButtonProps> = ({
     children,
     onClick,

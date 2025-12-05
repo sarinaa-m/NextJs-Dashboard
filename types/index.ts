@@ -10,6 +10,7 @@ export interface ButtonProps {
     disabled?: boolean;
     className?: string;
     loading?: boolean
+    size?: 'small' | 'medium' | 'large';
 }
 
 export interface CardProps {
@@ -20,6 +21,7 @@ export interface CardProps {
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     error?: string;
+    disabled?:boolean
 }
 
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {

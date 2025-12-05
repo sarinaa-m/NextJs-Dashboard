@@ -1,6 +1,6 @@
 import { InputProps } from "@/types";
 
-const Input: React.FC<InputProps> = ({ error, label, ...props }) => {
+const Input: React.FC<InputProps> = ({ error, label, disabled, ...props }) => {
     return (
         <div className="mb-4">
             {label && (
@@ -11,6 +11,7 @@ const Input: React.FC<InputProps> = ({ error, label, ...props }) => {
             <input
                 className={`w-full px-4 py-2 rounded-lg border ${error ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                     } bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors`}
+                disabled={disabled}
                 {...props}
             />
             {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
